@@ -61,7 +61,7 @@
 
         /* Animated gradient text */
         .gradient-text {
-            background: linear-gradient(135deg, #FF6B6B, #FF8E53, #FFD166, #06D6A0, #118AB2, #073B4C);
+            background: linear-gradient(135deg, #FF6B6B, #FF8E53, #FFD166, #06D6A0, #118AB2, #EC4899);
             background-size: 300% 300%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -179,7 +179,6 @@
 </head>
 <body class="bg-slate-950 text-white min-h-screen overflow-x-hidden relative select-none">
 
-    <!-- Background Animated Gradient Canvas -->
     <div class="fixed inset-0 bg-gradient-to-br from-indigo-950 via-purple-950 to-pink-950 z-0"></div>
     <canvas id="starfield" class="fixed inset-0 z-0 pointer-events-none"></canvas>
 
@@ -196,10 +195,8 @@
     <!-- Container for Floating Balloons -->
     <div id="balloonContainer" class="fixed inset-0 pointer-events-auto overflow-hidden z-20"></div>
 
-    <!-- SCREEN 1: INTRO LANDING SCREEN -->
     <section id="introScreen" class="fixed inset-0 z-30 flex flex-col items-center justify-center px-4 text-center transition-all duration-1000">
         <div class="glass-card p-8 md:p-12 rounded-3xl max-w-xl w-full mx-auto animate-float border border-white/20 relative overflow-hidden">
-            <!-- Decorative sparkles -->
             <div class="absolute -top-10 -left-10 w-32 h-32 bg-pink-500/30 rounded-full blur-2xl"></div>
             <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-purple-500/30 rounded-full blur-2xl"></div>
 
@@ -209,7 +206,9 @@
                 </div>
                 
                 <h2 class="text-sm uppercase tracking-widest text-pink-300 font-semibold mb-2">Special Surprise Ahead</h2>
-                <h1 class="text-4xl md:text-6xl font-extrabold mb-4 font-fredoka gradient-text">Hey Mohibul!</h1>
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-4 font-fredoka gradient-text">
+                    Hey <span class="birthday-person-name">Mohibul Khan</span>!
+                </h1>
                 <p class="text-slate-300 text-base md:text-lg mb-8 leading-relaxed">
                     Someone standard & awesome has prepared a special birthday surprise just for you. Are you ready to celebrate?
                 </p>
@@ -228,7 +227,6 @@
         </div>
     </section>
 
-    <!-- SCREEN 2: MAIN CELEBRATION CONTENT -->
     <main id="mainContent" class="relative z-30 min-h-screen px-4 py-12 hidden opacity-0 transition-opacity duration-1000 max-w-5xl mx-auto flex flex-col items-center">
         
         <!-- Header Banner -->
@@ -240,7 +238,7 @@
             <h1 class="text-5xl md:text-7xl lg:text-8xl font-black font-fredoka tracking-tight mb-2 glow-text gradient-text py-2">
                 HAPPY BIRTHDAY
             </h1>
-            <h2 class="text-4xl md:text-6xl font-bold font-sacramento text-yellow-300 glow-gold mb-6">
+            <h2 class="text-4xl md:text-6xl font-bold font-sacramento text-yellow-300 glow-gold mb-6 birthday-person-name">
                 Mohibul Khan
             </h2>
 
@@ -261,27 +259,21 @@
             </div>
         </header>
 
-        <!-- Interactive Cake Section -->
         <section class="w-full max-w-2xl my-8 glass-card-dark p-8 rounded-3xl text-center relative overflow-hidden border border-pink-500/20">
             <h3 class="text-2xl font-bold text-pink-300 mb-2 font-fredoka">Make a Wish & Blow Out The Candles! 🕯️</h3>
             <p class="text-xs md:text-sm text-slate-400 mb-8">Click or tap the flames on the cake to extinguish them, or click "Blow All".</p>
 
-            <!-- Cake Visual -->
             <div class="relative w-64 h-56 mx-auto flex flex-col items-center justify-end mb-6">
-                
                 <!-- Candles Container -->
                 <div class="flex items-end justify-center space-x-6 mb-1 z-20">
-                    <!-- Candle 1 -->
                     <div class="candle-group flex flex-col items-center cursor-pointer" onclick="extinguishCandle(this)">
                         <div class="flame" id="flame1"></div>
                         <div class="w-3 h-12 bg-gradient-to-r from-pink-400 via-pink-300 to-pink-500 rounded-t-sm shadow"></div>
                     </div>
-                    <!-- Candle 2 (Center) -->
                     <div class="candle-group flex flex-col items-center cursor-pointer" onclick="extinguishCandle(this)">
                         <div class="flame" id="flame2"></div>
                         <div class="w-3 h-14 bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 rounded-t-sm shadow"></div>
                     </div>
-                    <!-- Candle 3 -->
                     <div class="candle-group flex flex-col items-center cursor-pointer" onclick="extinguishCandle(this)">
                         <div class="flame" id="flame3"></div>
                         <div class="w-3 h-12 bg-gradient-to-r from-cyan-400 via-cyan-300 to-cyan-500 rounded-t-sm shadow"></div>
@@ -289,10 +281,8 @@
                 </div>
 
                 <!-- Cake Layers -->
-                <!-- Top Layer -->
                 <div class="w-44 h-16 bg-gradient-to-r from-pink-500 via-rose-400 to-pink-600 rounded-t-2xl relative shadow-lg z-10 border-b-4 border-pink-700/40">
                     <div class="absolute inset-x-0 top-0 h-4 bg-white/40 rounded-t-2xl"></div>
-                    <!-- Frosting drips -->
                     <div class="flex justify-around w-full relative -bottom-11">
                         <div class="w-4 h-4 bg-white/40 rounded-full"></div>
                         <div class="w-5 h-6 bg-white/40 rounded-full"></div>
@@ -300,16 +290,13 @@
                         <div class="w-5 h-5 bg-white/40 rounded-full"></div>
                     </div>
                 </div>
-                <!-- Bottom Layer -->
                 <div class="w-60 h-20 bg-gradient-to-r from-purple-600 via-indigo-500 to-purple-700 rounded-t-2xl relative shadow-2xl z-0 border-b-4 border-purple-900/40">
                     <div class="absolute inset-x-0 top-0 h-4 bg-pink-300/30 rounded-t-2xl"></div>
-                    <!-- Decorative sprinkles -->
                     <div class="absolute top-6 left-6 w-2 h-2 rounded-full bg-yellow-300"></div>
                     <div class="absolute top-8 left-16 w-2 h-2 rounded-full bg-cyan-300"></div>
                     <div class="absolute top-5 right-10 w-2 h-2 rounded-full bg-pink-300"></div>
                     <div class="absolute top-10 right-24 w-2 h-2 rounded-full bg-emerald-300"></div>
                 </div>
-                <!-- Cake Stand -->
                 <div class="w-68 h-4 bg-slate-300 rounded-full shadow-2xl"></div>
             </div>
 
@@ -317,11 +304,10 @@
                 <i class="fas fa-wind mr-1"></i> Blow Out All Candles
             </button>
             <div id="wishMessage" class="hidden text-emerald-400 font-semibold text-sm mt-4 animate-bounce">
-                ✨ 🎉 Wish Sent to the Universe! Happy Birthday Mohibul! 🎉 ✨
+                ✨ 🎉 Wish Sent to the Universe! Happy Birthday <span class="birthday-person-name">Mohibul Khan</span>! 🎉 ✨
             </div>
         </section>
 
-        <!-- Heartfelt Birthday Wishes Grid -->
         <section class="w-full my-8">
             <h3 class="text-3xl font-extrabold text-center mb-8 font-fredoka gradient-text">
                 Special Words For An Awesome Friend 🌟
@@ -336,8 +322,8 @@
                             <i class="fas fa-crown"></i>
                         </div>
                         <h4 class="text-xl font-bold text-white mb-2">A True Legend</h4>
-                        <p class="text-slate-300 text-sm leading-relaxed">
-                            Mohibul, you bring energy, positivity, and boundless laughter everywhere you go. Working, chilling, or hanging out with you is always a highlight!
+                        <p class="text-slate-300 text-sm leading-relaxed" id="wishCard1">
+                            <span class="birthday-person-firstname">Mohibul</span>, you bring energy, positivity, and boundless laughter everywhere you go. Working, chilling, or hanging out with you is always a highlight!
                         </p>
                     </div>
                     <div class="mt-6 pt-4 border-t border-white/10 text-xs text-pink-300 font-semibold flex items-center justify-between">
@@ -353,7 +339,7 @@
                             <i class="fas fa-rocket"></i>
                         </div>
                         <h4 class="text-xl font-bold text-white mb-2">Greatness Awaits</h4>
-                        <p class="text-slate-300 text-sm leading-relaxed">
+                        <p class="text-slate-300 text-sm leading-relaxed" id="wishCard2">
                             May this new year of your life open doors to unprecedented achievements, endless opportunities, good health, and total success in all your dreams!
                         </p>
                     </div>
@@ -370,7 +356,7 @@
                             <i class="fas fa-glass-cheers"></i>
                         </div>
                         <h4 class="text-xl font-bold text-white mb-2">Unforgettable Memories</h4>
-                        <p class="text-slate-300 text-sm leading-relaxed">
+                        <p class="text-slate-300 text-sm leading-relaxed" id="wishCard3">
                             Here’s to another year of late-night talks, epic adventures, crazy plans, and memories that we'll cherish forever. Keep shining bright!
                         </p>
                     </div>
@@ -383,28 +369,115 @@
             </div>
         </section>
 
-        <!-- Big Letter / Personal Message Box -->
         <section class="w-full my-8 glass-card-dark p-8 md:p-10 rounded-3xl relative overflow-hidden border border-white/10">
             <div class="max-w-3xl mx-auto text-center">
                 <i class="fas fa-quote-left text-4xl text-pink-500/40 mb-4"></i>
-                <h3 class="text-2xl md:text-3xl font-bold mb-4 font-fredoka text-pink-300">Dear Mohibul Khan,</h3>
-                <p class="text-slate-200 text-base md:text-lg leading-relaxed mb-6 font-light">
+                <h3 class="text-2xl md:text-3xl font-bold mb-4 font-fredoka text-pink-300">
+                    Dear <span class="birthday-person-name">Mohibul Khan</span>,
+                </h3>
+                <p class="text-slate-200 text-base md:text-lg leading-relaxed mb-6 font-light" id="customNoteText">
                     On your special day, I want you to know how much your friendship means. You're someone with a big heart, genuine smile, and unstoppable vibe. May your year ahead be as amazing, inspiring, and wonderful as you are!
                 </p>
                 <div class="text-right">
                     <p class="font-sacramento text-3xl text-yellow-300 glow-gold">Warmest Wishes,</p>
-                    <p class="text-sm font-semibold text-slate-400">Your Friend Forever Injamam❤️</p>
+                    <p class="text-sm font-semibold text-slate-300" id="senderNameDisplay">Your Friend Forever ❤️</p>
                 </div>
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer class="mt-12 text-center text-slate-400 text-sm pb-8">
-            <p>Designed with ❤️ for Mohibul Khan's Birthday Celebration</p>
-            <p class="text-xs mt-1 text-slate-500">Tap anywhere on screen to spawn celebration sparkles!</p>
+        <footer class="mt-12 text-center text-slate-400 text-sm pb-8 w-full flex flex-col items-center gap-4">
+            <p>Designed with ❤️ for <span class="birthday-person-name font-semibold text-pink-300">Mohibul Khan</span>'s Birthday Celebration</p>
+            <p class="text-xs text-slate-500">Tap anywhere on screen to spawn celebration sparkles!</p>
+            
+            <!-- ADMIN ACCESS BUTTON -->
+            <button id="openAdminLoginBtn" class="mt-4 px-4 py-2 rounded-xl glass-card hover:bg-white/10 text-slate-300 hover:text-white text-xs font-medium flex items-center gap-2 border border-white/10 transition-all hover:scale-105">
+                <i class="fas fa-user-gear text-pink-400"></i>
+                <span>Admin Panel</span>
+            </button>
         </footer>
 
     </main>
+
+    <!-- ADMIN LOGIN MODAL -->
+    <div id="adminLoginModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-md hidden transition-all duration-300">
+        <div class="glass-card-dark p-6 md:p-8 rounded-3xl max-w-sm w-full border border-white/20 shadow-2xl relative">
+            <button id="closeLoginModalBtn" class="absolute top-4 right-4 text-slate-400 hover:text-white text-lg">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 rounded-full bg-pink-500/20 text-pink-400 mx-auto flex items-center justify-center text-xl mb-2 border border-pink-500/30">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <h3 class="text-xl font-bold font-fredoka text-white">Admin Authentication</h3>
+                <p class="text-xs text-slate-400 mt-1">Enter PIN to edit birthday details</p>
+            </div>
+
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Password PIN</label>
+                    <input type="password" id="adminPasswordInput" placeholder="Enter password " class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-pink-500 text-center tracking-widest text-lg font-mono">
+                </div>
+                <p id="loginErrorMsg" class="text-xs text-rose-400 text-center hidden">Incorrect Password!</p>
+                
+                <button id="submitLoginBtn" class="w-full py-3 rounded-xl bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-bold text-sm shadow-lg transition hover:scale-[1.02]">
+                    Verify & Unlock
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ADMIN PANEL DASHBOARD MODAL -->
+    <div id="adminPanelModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md hidden transition-all duration-300">
+        <div class="glass-card-dark p-6 md:p-8 rounded-3xl max-w-lg w-full max-h-[90vh] overflow-y-auto border border-pink-500/30 shadow-2xl relative">
+            <button id="closeAdminPanelBtn" class="absolute top-4 right-4 text-slate-400 hover:text-white text-lg">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <div class="flex items-center gap-3 mb-6 border-b border-white/10 pb-4">
+                <div class="p-3 rounded-xl bg-pink-500/20 text-pink-400 border border-pink-500/30">
+                    <i class="fas fa-sliders text-xl"></i>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold font-fredoka text-white">Admin Settings</h3>
+                    <p class="text-xs text-slate-400">Edit Name, Sender & Custom Wish Text</p>
+                </div>
+            </div>
+
+            <div class="space-y-4 text-left">
+                <!-- Field 1: Birthday Person Full Name -->
+                <div>
+                    <label class="block text-xs font-semibold text-pink-300 mb-1">Birthday Person Name</label>
+                    <input type="text" id="adminPersonName" class="w-full px-4 py-2.5 rounded-xl bg-slate-900/90 border border-slate-700 text-white focus:outline-none focus:border-pink-500 text-sm">
+                </div>
+
+                <!-- Field 2: Sender / Best Friend Name -->
+                <div>
+                    <label class="block text-xs font-semibold text-pink-300 mb-1">Your Name / Sender Signature</label>
+                    <input type="text" id="adminSenderName" class="w-full px-4 py-2.5 rounded-xl bg-slate-900/90 border border-slate-700 text-white focus:outline-none focus:border-pink-500 text-sm">
+                </div>
+
+                <!-- Field 3: Main Note / Wishes -->
+                <div>
+                    <label class="block text-xs font-semibold text-pink-300 mb-1">Personal Letter Note</label>
+                    <textarea id="adminNoteText" rows="3" class="w-full px-4 py-2.5 rounded-xl bg-slate-900/90 border border-slate-700 text-white focus:outline-none focus:border-pink-500 text-sm resize-none"></textarea>
+                </div>
+
+                <!-- Action Controls -->
+                <div class="pt-4 flex flex-col sm:flex-row items-center gap-3">
+                    <button id="saveAdminChangesBtn" class="w-full sm:w-1/2 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-bold text-sm shadow-lg transition hover:scale-[1.02]">
+                        <i class="fas fa-save mr-1"></i> Save Changes
+                    </button>
+                    <button id="resetAdminDefaultsBtn" class="w-full sm:w-1/2 py-3 rounded-xl glass-card hover:bg-white/20 text-slate-300 font-semibold text-sm transition">
+                        <i class="fas fa-undo mr-1"></i> Reset Defaults
+                    </button>
+                </div>
+                <div id="adminSaveNotification" class="text-center text-xs text-emerald-400 font-semibold hidden mt-2">
+                    ✓ Changes Saved & Updated Live!
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
         /* WEB AUDIO API SYNTHESIZER FOR SOUND EFFECTS */
@@ -424,14 +497,12 @@
                 }
             }
 
-            // Realistic Balloon Pop Sound Effect
             playPop() {
                 if (!this.enabled) return;
                 this.init();
 
                 const now = this.ctx.currentTime;
                 
-                // Burst noise
                 const bufferSize = this.ctx.sampleRate * 0.08;
                 const buffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
                 const output = buffer.getChannelData(0);
@@ -458,7 +529,6 @@
                 whiteNoise.start(now);
                 whiteNoise.stop(now + 0.08);
 
-                // High pitch click for rubber stretch release
                 const osc = this.ctx.createOscillator();
                 const oscGain = this.ctx.createGain();
                 osc.type = 'triangle';
@@ -475,7 +545,6 @@
                 osc.stop(now + 0.05);
             }
 
-            // Candle blow out sound
             playBlow() {
                 if (!this.enabled) return;
                 this.init();
@@ -505,7 +574,6 @@
                 noise.stop(now + 0.4);
             }
 
-            // Happy Birthday Synthesizer Melody Loop
             toggleMusic() {
                 this.init();
                 this.musicEnabled = !this.musicEnabled;
@@ -522,7 +590,6 @@
                 if (!this.musicEnabled) return;
                 this.isPlayingMusic = true;
 
-                // Happy Birthday Notes: C4, C4, D4, C4, F4, E4...
                 const notes = [
                     {f: 261.63, d: 0.3}, {f: 261.63, d: 0.3}, {f: 293.66, d: 0.6}, {f: 261.63, d: 0.6}, {f: 349.23, d: 0.6}, {f: 329.63, d: 1.0},
                     {f: 261.63, d: 0.3}, {f: 261.63, d: 0.3}, {f: 293.66, d: 0.6}, {f: 261.63, d: 0.6}, {f: 392.00, d: 0.6}, {f: 349.23, d: 1.0},
@@ -551,7 +618,6 @@
                     currentTime += note.d + 0.05;
                 });
 
-                // Loop melody when complete
                 const totalDuration = (currentTime - this.ctx.currentTime) * 1000;
                 this.musicTimeout = setTimeout(() => {
                     if (this.musicEnabled) this.playTune();
@@ -629,8 +695,7 @@
             string.className = 'balloon-string';
             balloon.appendChild(string);
 
-            // Floating movement
-            const speed = Math.random() * 6 + 7; // duration seconds
+            const speed = Math.random() * 6 + 7;
             const horizontalDrift = (Math.random() - 0.5) * 150;
 
             balloon.animate([
@@ -641,12 +706,10 @@
                 easing: 'linear'
             });
 
-            // Burst event on click/tap
             const popEvent = (e) => {
                 e.stopPropagation();
                 sound.playPop();
 
-                // Sparkles at balloon location
                 const rect = balloon.getBoundingClientRect();
                 const x = (rect.left + rect.width / 2) / window.innerWidth;
                 const y = (rect.top + rect.height / 2) / window.innerHeight;
@@ -666,19 +729,62 @@
 
             container.appendChild(balloon);
 
-            // Auto remove after float out
             setTimeout(() => {
                 if (balloon.parentNode) balloon.remove();
             }, speed * 1000);
         }
 
         function startSpawningBalloons() {
-            // Initial batch
             for (let i = 0; i < 8; i++) {
                 setTimeout(createBalloon, i * 400);
             }
-            // Continuous spawning
             setInterval(createBalloon, 1800);
+        }
+
+        const defaultData = {
+            personName: "Mohibul Khan",
+            senderName: "Your Friend Forever ❤️",
+            customNote: "On your special day, I want you to know how much your friendship means. You're someone with a big heart, genuine smile, and unstoppable vibe. May your year ahead be as amazing, inspiring, and wonderful as you are!"
+        };
+
+        let appData = { ...defaultData };
+
+        function loadAppData() {
+            const saved = localStorage.getItem('m_birthday_app_data');
+            if (saved) {
+                try {
+                    appData = JSON.parse(saved);
+                } catch(e) {
+                    appData = { ...defaultData };
+                }
+            }
+            updateDOMWithData();
+        }
+
+        function saveAppData() {
+            localStorage.setItem('m_birthday_app_data', JSON.stringify(appData));
+            updateDOMWithData();
+        }
+
+        function updateDOMWithData() {
+            // Update All Name Occurrences
+            document.querySelectorAll('.birthday-person-name').forEach(el => {
+                el.textContent = appData.personName || "Mohibul Khan";
+            });
+
+            // First name extraction for casual wish card
+            const firstName = (appData.personName || "Mohibul").split(' ')[0];
+            document.querySelectorAll('.birthday-person-firstname').forEach(el => {
+                el.textContent = firstName;
+            });
+
+            // Update Sender Name
+            const senderEl = document.getElementById('senderNameDisplay');
+            if (senderEl) senderEl.textContent = appData.senderName || "Your Friend Forever ❤️";
+
+            // Update Personal Note
+            const noteEl = document.getElementById('customNoteText');
+            if (noteEl) noteEl.textContent = appData.customNote || defaultData.customNote;
         }
 
         // UI Controls & Start Trigger
@@ -693,20 +799,17 @@
         startBtn.addEventListener('click', () => {
             sound.init();
             
-            // Fade out intro
             introScreen.classList.add('opacity-0', 'pointer-events-none');
             setTimeout(() => {
                 introScreen.classList.add('hidden');
                 mainContent.classList.remove('hidden');
                 
-                // Fade in main
                 setTimeout(() => {
                     mainContent.classList.remove('opacity-0');
                     triggerMassiveConfetti();
                 }, 50);
             }, 1000);
 
-            // Start balloon spawning & play background tune automatically
             startSpawningBalloons();
             sound.toggleMusic();
             document.getElementById('musicIcon').classList.add('text-pink-400', 'animate-spin');
@@ -780,7 +883,6 @@
                 sound.playBlow();
                 flame.style.display = 'none';
 
-                // Smoke Effect
                 const smoke = document.createElement('div');
                 smoke.className = 'smoke';
                 element.appendChild(smoke);
@@ -806,8 +908,7 @@
 
         // Interactive Sparkle Effects on Click Anywhere
         window.addEventListener('click', (e) => {
-            // Avoid triggering when clicking buttons or cards
-            if (e.target.closest('button') || e.target.closest('.balloon')) return;
+            if (e.target.closest('button') || e.target.closest('.balloon') || e.target.closest('#adminLoginModal') || e.target.closest('#adminPanelModal')) return;
 
             confetti({
                 particleCount: 12,
@@ -819,6 +920,89 @@
                 colors: ['#FFD166', '#EC4899', '#ffffff']
             });
         });
+
+        const openAdminLoginBtn = document.getElementById('openAdminLoginBtn');
+        const adminLoginModal = document.getElementById('adminLoginModal');
+        const closeLoginModalBtn = document.getElementById('closeLoginModalBtn');
+        const adminPasswordInput = document.getElementById('adminPasswordInput');
+        const submitLoginBtn = document.getElementById('submitLoginBtn');
+        const loginErrorMsg = document.getElementById('loginErrorMsg');
+
+        const adminPanelModal = document.getElementById('adminPanelModal');
+        const closeAdminPanelBtn = document.getElementById('closeAdminPanelBtn');
+        const saveAdminChangesBtn = document.getElementById('saveAdminChangesBtn');
+        const resetAdminDefaultsBtn = document.getElementById('resetAdminDefaultsBtn');
+        const adminSaveNotification = document.getElementById('adminSaveNotification');
+
+        const adminPersonName = document.getElementById('adminPersonName');
+        const adminSenderName = document.getElementById('adminSenderName');
+        const adminNoteText = document.getElementById('adminNoteText');
+
+        openAdminLoginBtn.addEventListener('click', () => {
+            adminPasswordInput.value = '';
+            loginErrorMsg.classList.add('hidden');
+            adminLoginModal.classList.remove('hidden');
+            adminPasswordInput.focus();
+        });
+
+        closeLoginModalBtn.addEventListener('click', () => {
+            adminLoginModal.classList.add('hidden');
+        });
+
+        function verifyPassword() {
+            if (adminPasswordInput.value === '0123') {
+                adminLoginModal.classList.add('hidden');
+                openAdminPanel();
+            } else {
+                loginErrorMsg.classList.remove('hidden');
+            }
+        }
+
+        submitLoginBtn.addEventListener('click', verifyPassword);
+        adminPasswordInput.addEventListener('keyup', (e) => {
+            if (e.key === 'Enter') verifyPassword();
+        });
+
+        function openAdminPanel() {
+            adminPersonName.value = appData.personName || "Mohibul Khan";
+            adminSenderName.value = appData.senderName || "Your Friend Forever ❤️";
+            adminNoteText.value = appData.customNote || defaultData.customNote;
+
+            adminSaveNotification.classList.add('hidden');
+            adminPanelModal.classList.remove('hidden');
+        }
+
+        closeAdminPanelBtn.addEventListener('click', () => {
+            adminPanelModal.classList.add('hidden');
+        });
+
+        saveAdminChangesBtn.addEventListener('click', () => {
+            appData.personName = adminPersonName.value.trim() || "Mohibul Khan";
+            appData.senderName = adminSenderName.value.trim() || "Your Friend Forever ❤️";
+            appData.customNote = adminNoteText.value.trim() || defaultData.customNote;
+
+            saveAppData();
+
+            adminSaveNotification.classList.remove('hidden');
+            setTimeout(() => {
+                adminSaveNotification.classList.add('hidden');
+                adminPanelModal.classList.add('hidden');
+            }, 1200);
+        });
+
+        resetAdminDefaultsBtn.addEventListener('click', () => {
+            appData = { ...defaultData };
+            saveAppData();
+            openAdminPanel();
+            adminSaveNotification.textContent = "✓ Reset to Defaults!";
+            adminSaveNotification.classList.remove('hidden');
+            setTimeout(() => {
+                adminSaveNotification.classList.add('hidden');
+            }, 1200);
+        });
+
+        // Initialize page and state
+        loadAppData();
 
         // Spawns introductory floating balloons on load screen
         for (let i = 0; i < 5; i++) {
